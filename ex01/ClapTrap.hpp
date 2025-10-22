@@ -1,0 +1,34 @@
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
+
+#include <iostream>
+#include <string>
+
+
+class ClapTrap
+{
+    //so that ScavTrap can change those in constructors, and also use them without getters
+    protected:
+        std::string name; //passed as a parameter to the constructor
+        int hit_points;
+        int energy_points;
+        int attack_damage;
+
+    public:
+        ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap &other);
+        ClapTrap &operator=(const ClapTrap &other); //copy assignment operator
+        ~ClapTrap();
+
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        
+};
+
+
+
+
+
+#endif
