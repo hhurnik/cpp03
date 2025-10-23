@@ -14,14 +14,13 @@ ClapTrap <name> attacks <target>, causing <damage> points of damage!*/
 
 ClapTrap::ClapTrap() : name("Some Default Name"), hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : name(name), hit_points(10), energy_points(10), attack_damage(0)
 {
-    std::cout << "Constructor with name parameter called" << std::endl;
+    std::cout << "ClapTrap constructor with name parameter called" << std::endl;
 }
-
 
 //this leads to additional logs when calling FragTrap copy constructor
 // ClapTrap::ClapTrap(const ClapTrap &other)
@@ -35,11 +34,10 @@ ClapTrap::ClapTrap(const ClapTrap &other) : name(other.name), hit_points(other.h
 {
     std::cout << "ClapTrap copy constructor called" << std::endl;
 }
-
 //copy assignment operator
 ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 {
-    std::cout << "Copy assignment operator called" << std::endl;
+    std::cout << "ClapTrap copy assignment operator called" << std::endl;
     if (this != &other)
     {
         //this->name = other.getName();
@@ -54,7 +52,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap destructor called" << std::endl;
 }
 
 
