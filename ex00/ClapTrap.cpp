@@ -1,17 +1,5 @@
 #include "ClapTrap.hpp"
 
-/*When ClapTrap attacks, it causes its target to lose <attack damage> hit points.
-When ClapTrap repairs itself, it regains <amount> hit points. Attacking and repairing
-each cost 1 energy point. Of course, ClapTrap can’t do anything if it has no hit points or
-energy points left. However, since these exercises serve as an introduction, the ClapTrap
-instances should not interact directly with one another, and the parameters will not refer
-to another instance of ClapTrap.*/
-
-/*In all of these member functions, you need to print a message to describe what happens. 
-For example, the attack() function may display something like (of course, without
-the angle brackets):
-ClapTrap <name> attacks <target>, causing <damage> points of damage!*/
-
 ClapTrap::ClapTrap() : name("Some Default Name"), hit_points(10), energy_points(10), attack_damage(0)
 {
     std::cout << "Default constructor called" << std::endl;
@@ -33,7 +21,6 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
     {
-        //this->name = other.getName();
         this->name = other.name;
         this->hit_points = other.hit_points;
         this->energy_points = other.energy_points;
@@ -48,7 +35,7 @@ ClapTrap::~ClapTrap()
     std::cout << "Destructor called" << std::endl;
 }
 
-
+//attack costs 1 energy point
 void ClapTrap::attack(const std::string &target)
 {
     if (hit_points <= 0)
@@ -83,6 +70,7 @@ void ClapTrap::takeDamage(unsigned int amount)
               << " damage. Hit points left: " << hit_points << std::endl;
 }
 
+//repair costs 1 energy point
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if (hit_points <= 0)

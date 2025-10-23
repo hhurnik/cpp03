@@ -17,7 +17,11 @@ int main()
     FragTrap fragAssign;
     fragAssign = frag;
 
+    //lets attack - inherited from claptrap
+    fragAssign.attack("someone new");
+    //fragAssign.takeDamage(5);
+
     std::cout << "---- End of FragTrap tests ----" << std::endl;
 
-    return 0;
+    return (0);
 }

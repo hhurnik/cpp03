@@ -9,6 +9,7 @@ int main()
     clap1.attack("Maria");
     //i took damage
     clap2.takeDamage(5);
+    //in real world it would be 0, but i'd like to show how the function works
 
     clap2.beRepaired(3);
 
